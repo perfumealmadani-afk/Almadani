@@ -8,9 +8,7 @@ arBtn.addEventListener("click", () => switchLang("ar"));
 
 function switchLang(lang) {
     currentLang = lang;
-    document.querySelectorAll("[data-en]").forEach(el => {
-        el.innerText = el.dataset[lang];
-    });
+    document.querySelectorAll("[data-en]").forEach(el => el.innerText = el.dataset[lang]);
 }
 
 // Navigation between sections
@@ -32,13 +30,7 @@ const products = document.querySelectorAll(".product");
 filterBtns.forEach(btn => {
     btn.addEventListener("click", () => {
         const filter = btn.dataset.filter;
-        products.forEach(p => {
-            if (filter === "all" || p.dataset.category === filter) {
-                p.style.display = "block";
-            } else {
-                p.style.display = "none";
-            }
-        });
+        products.forEach(p => p.style.display = (filter==="all" || p.dataset.category===filter) ? "block" : "none");
     });
 });
 
@@ -72,19 +64,14 @@ function renderCart() {
         total += item.price;
         const div = document.createElement("div");
         div.classList.add("cart-item");
-        div.innerHTML = `
-            <span>${item.name} - ${item.price} JD</span>
-            <button onclick="removeFromCart(${index})">X</button>
-        `;
+        div.innerHTML = `<span>${item.name} - ${item.price} JD</span>
+                         <button onclick="removeFromCart(${index})">X</button>`;
         cartItemsDiv.appendChild(div);
     });
-    cartTotal.innerText = (currentLang === "ar" ? "المجموع: " : "Total: ") + total + " JD";
+    cartTotal.innerText = (currentLang==="ar"?"المجموع: ":"Total: ")+total+" JD";
 }
 
-function removeFromCart(index) {
-    cart.splice(index, 1);
-    renderCart();
-}
+function removeFromCart(index) { cart.splice(index,1); renderCart(); }
 
 // WhatsApp Contact
 const whatsappBtn = document.getElementById("whatsapp-btn");
@@ -92,14 +79,11 @@ const customerName = document.getElementById("customer-name");
 const customerMessage = document.getElementById("customer-message");
 const phoneNumber = "+962789191500";
 
-whatsappBtn.addEventListener("click", (e) => {
+whatsappBtn.addEventListener("click",(e)=>{
     e.preventDefault();
     const name = encodeURIComponent(customerName.value);
     const message = encodeURIComponent(customerMessage.value);
-    if(!name || !message) {
-        alert(currentLang === "ar" ? "يرجى إدخال الاسم والرسالة" : "Please enter name and message");
-        return;
-    }
+    if(!name||!message){ alert(currentLang==="ar"?"يرجى إدخال الاسم والرسالة":"Please enter name and message"); return; }
     const url = https://wa.me/${phoneNumber}?text=Name: ${name}%0AMessage: ${message};
-    window.open(url, "_blank");
+    window.open(url,"_blank");
 });
