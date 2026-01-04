@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Almadani</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">Almadani</div>
+        <nav>
+            <ul>
+                <li><a href="#" data-section="home" class="nav-link">Home</a></li>
+                <li><a href="#" data-section="products" class="nav-link">Products</a></li>
+                <li><a href="#" data-section="about" class="nav-link">About</a></li>
+                <li><a href="#" data-section="contact" class="nav-link">Contact</a></li>
+                <li><button id="cart-btn">Cart 🛒</button></li>
+            </ul>
+        </nav>
+        <div class="lang-switch">
+            <button id="en-btn">EN</button> | <button id="ar-btn">AR</button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="content">
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <h1 data-en="Welcome to Almadani" data-ar="مرحبا بكم في المدني">Welcome to Almadani</h1>
+            <p data-en="Discover our amazing perfumes" data-ar="اكتشفوا عطورنا المذهلة">Discover our amazing perfumes</p>
+            <div class="collections">
+                <a href="#" class="collection-link" data-collection="men" data-en="Men" data-ar="رجال">Men</a>
+                <a href="#" class="collection-link" data-collection="women" data-en="Women" data-ar="نساء">Women</a>
+                <a href="#" class="collection-link" data-collection="unisex" data-ar="للجميع" data-en="Unisex">Unisex</a>
+                <a href="#" class="collection-link" data-collection="collections" data-en="Collections" data-ar="الكوليكشن">Collections</a>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products" class="section">
+            <h2 data-en="Products" data-ar="المنتجات">Products</h2>
+            <div class="product-filters">
+                <button class="filter-btn" data-filter="all" data-en="All" data-ar="الكل">All</button>
+                <button class="filter-btn" data-filter="men" data-en="Men" data-ar="رجال">Men</button>
+                <button class="filter-btn" data-filter="women" data-en="Women" data-ar="نساء">Women</button>
+                <button class="filter-btn" data-filter="unisex" data-en="Unisex" data-ar="للجميع">Unisex</button>
+                <button class="filter-btn" data-filter="arabic" data-en="Arabic Perfumes" data-ar="العطور العربية">Arabic Perfumes</button>
+                <button class="filter-btn" data-filter="bestseller" data-en="Best Sellers" data-ar="الأكثر مبيعاً">Best Sellers</button>
+            </div>
+            <div class="product-list">
+                <!-- Example Product -->
+                <div class="product" data-category="men">
+                    <img src="https://via.placeholder.com/150" alt="Perfume 1">
+                    <h3 data-en="Elegant Man" data-ar="رجل أنيق">Elegant Man</h3>
+                    <p class="price">20 JD</p>
+                    <button class="add-cart-btn" data-en="Add to Cart" data-ar="أضف إلى السلة">Add to Cart</button>
+                </div>
+                <div class="product" data-category="women">
+                    <img src="https://via.placeholder.com/150" alt="Perfume 2">
+                    <h3 data-en="Lovely Woman" data-ar="امرأة رائعة">Lovely Woman</h3>
+                    <p class="price">25 JD</p>
+                    <button class="add-cart-btn" data-en="Add to Cart" data-ar="أضف إلى السلة">Add to Cart</button>
+                </div>
+                <div class="product" data-category="unisex">
+                    <img src="https://via.placeholder.com/150" alt="Perfume 3">
+                    <h3 data-en="Unisex Fragrance" data-ar="عطر للجميع">Unisex Fragrance</h3>
+                    <p class="price">22 JD</p>
+                    <button class="add-cart-btn" data-en="Add to Cart" data-ar="أضف إلى السلة">Add to Cart</button>
+                </div>
+                <div class="product" data-category="arabic">
+                    <img src="https://via.placeholder.com/150" alt="Perfume 4">
+                    <h3 data-en="Arabic Oud" data-ar="عود عربي">Arabic Oud</h3>
+                    <p class="price">30 JD</p>
+                    <button class="add-cart-btn" data-en="Add to Cart" data-ar="أضف إلى السلة">Add to Cart</button>
+                </div>
+                <div class="product" data-category="bestseller">
+                    <img src="https://via.placeholder.com/150" alt="Perfume 5">
+                    <h3 data-en="Bestseller Fragrance" data-ar="الأكثر مبيعاً">Bestseller Fragrance</h3>
+                    <p class="price">28 JD</p>
+                    <button class="add-cart-btn" data-en="Add to Cart" data-ar="أضف إلى السلة">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <h2 data-en="About Us" data-ar="من نحن">About Us</h2>
+            <p data-en="Almadani is your go-to perfume store offering premium fragrances for everyone."
+               data-ar="المدني هو متجرك المفضل للعطور، يقدم عطور مميزة للجميع.">
+               Almadani is your go-to perfume store offering premium fragrances for everyone.
+            </p>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <h2 data-en="Contact Us" data-ar="تواصل معنا">Contact Us</h2>
+            <form id="contact-form">
+                <input type="text" id="customer-name" placeholder="Your Name / اسمك" required>
+                <textarea id="customer-message" placeholder="Message / رسالتك" required></textarea>
+                <button type="submit" id="whatsapp-btn">Send via WhatsApp</button>
+            </form>
+        </section>
+
+        <!-- Cart Section -->
+        <section id="cart" class="section">
+            <h2 data-en="Your Cart" data-ar="سلة التسوق">Your Cart</h2>
+            <div id="cart-items"></div>
+            <p id="cart-total" data-en="Total: " data-ar="المجموع: ">Total: 0 JD</p>
+            <button id="checkout-btn" data-en="Checkout" data-ar="الدفع">Checkout</button>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
